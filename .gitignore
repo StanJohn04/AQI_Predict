@@ -3,6 +3,20 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Data Files
+data/
+*.csv
+*.json
+
+# Environment variables
+.env
+venv/
+__pycache__/
+
+#Creds
+*.ini 
+*.cfg 
+
 # C extensions
 *.so
 
