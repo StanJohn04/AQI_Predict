@@ -1,4 +1,3 @@
--- Drop tables if they exist to start with a clean slate.
 DROP TABLE IF EXISTS daily_readings;
 DROP TABLE IF EXISTS locations;
 
@@ -26,13 +25,12 @@ CREATE TABLE daily_readings (
     temperature_celsius REAL,
     precipitation_mm REAL,
     wind_speed_kmh REAL,
-    pm10 REAL, -- Added
-    co REAL,   -- Added
-    so2 REAL,  -- Added
+    pm10 REAL, 
+    co REAL,   
+    so2 REAL,  
     UNIQUE(location_id, reading_date)
 );
 
--- Add comments to explain the schema (optional but good practice)
 COMMENT ON TABLE locations IS 'Stores unique geographic locations for which data is collected.';
 COMMENT ON TABLE daily_readings IS 'Stores daily air quality and weather readings for each location.';
 COMMENT ON COLUMN daily_readings.location_id IS 'Foreign key linking to the locations table.';
