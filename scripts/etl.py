@@ -9,6 +9,7 @@ import json
 # --- CONFIGURATION ---
 load_dotenv()
 
+# Define a list of locations with their geographic coordinates.
 LOCATIONS = [
     { "city": "Savannah", "country": "USA", "latitude": 32.0809, "longitude": -81.0912 },
     { "city": "Port Wentworth", "country": "USA", "latitude": 32.17, "longitude": -81.17 },
@@ -16,6 +17,7 @@ LOCATIONS = [
 ]
 
 def get_db_engine():
+    # Creates and returns a SQLAlchemy engine for database connection.
     try:
         db_user, db_password = os.getenv("DB_USER"), os.getenv("DB_PASSWORD")
         db_host, db_port, db_name = os.getenv("DB_HOST"), os.getenv("DB_PORT"), os.getenv("DB_NAME")
@@ -29,6 +31,7 @@ def get_db_engine():
 
 
 def fetch_air_quality_data(latitude, longitude):
+    # Fetches current air quality data from the Google Air Quality API for a given location.
     api_key = os.getenv("GOOGLE_API_KEY")
     if not api_key:
         print("Error: GOOGLE_API_KEY not found.")
@@ -56,6 +59,7 @@ def fetch_air_quality_data(latitude, longitude):
         return None
 
 def fetch_weather_data(latitude, longitude):
+    # Fetches a daily weather forecast from the Open-Meteo API.
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": latitude, "longitude": longitude,
@@ -72,9 +76,9 @@ def fetch_weather_data(latitude, longitude):
         return None
 
 def transform_data(aqi_data, weather_data):
-    """
-    FINAL: Transforms raw API data, extracting all available pollutants.
-    """
+    
+     # Transforms raw API data, extracting all available pollutants.
+    
     print("Transforming data...")
     if not aqi_data or not weather_data:
         return None
@@ -89,7 +93,7 @@ def transform_data(aqi_data, weather_data):
         
         pollutants = {p.get('code'): p.get('concentration', {}).get('value') for p in aqi_data.get('pollutants', [])}
         
-        # --- FINAL: Extract all pollutants ---
+        # Extract all pollutants ---
         pm10 = pollutants.get('pm10')
         pm25 = pollutants.get('pm25')
         o3 = pollutants.get('o3')
@@ -132,7 +136,7 @@ def load_data(engine, location_info, reading_data):
 
         reading_data['location_id'] = location_id
         
-        # FINAL: The INSERT statement now includes all columns
+        # The INSERT statement now includes all columns
         insert_sql = text("""
             INSERT INTO daily_readings (
                 location_id, reading_date, aqi, pm10, pm25, o3, no2, co, so2,
