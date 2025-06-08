@@ -26,6 +26,9 @@ CREATE TABLE daily_readings (
     temperature_celsius REAL,
     precipitation_mm REAL,
     wind_speed_kmh REAL,
+    pm10 REAL, -- Added
+    co REAL,   -- Added
+    so2 REAL,  -- Added
     UNIQUE(location_id, reading_date)
 );
 
