@@ -1,0 +1,2500 @@
+{
+ "city": "Savannah",
+ "local_date": "2026-08-13",
+ "window_utc": {
+  "start": "2026-08-13T04:00:00+00:00",
+  "end": "2026-08-14T04:00:00+00:00"
+ },
+ "hoursInfo": [
+  {
+   "dateTime": "2026-08-14T04:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 80,
+     "aqiDisplay": "80",
+     "color": {
+      "red": 0.34509805,
+      "green": 0.74509805,
+      "blue": 0.20784314
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 47,
+     "aqiDisplay": "47",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 179.55,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 13.71,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 25,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 20.6,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 8.7,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.64,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-14T03:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 76,
+     "aqiDisplay": "76",
+     "color": {
+      "red": 0.4117647,
+      "green": 0.77254903,
+      "blue": 0.20392157
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 46,
+     "aqiDisplay": "46",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 180.38,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 15.95,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 30,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 20.4,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 8.3,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-14T02:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 72,
+     "aqiDisplay": "72",
+     "color": {
+      "red": 0.48235294,
+      "green": 0.79607844,
+      "blue": 0.2
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 46,
+     "aqiDisplay": "46",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 180.79,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 13.12,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 35,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 21.2,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 9,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-14T01:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 72,
+     "aqiDisplay": "72",
+     "color": {
+      "red": 0.48235294,
+      "green": 0.79607844,
+      "blue": 0.2
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 45,
+     "aqiDisplay": "45",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 187.82,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 13.22,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 36,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 29.2,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 9,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.64,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-14T00:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 71,
+     "aqiDisplay": "71",
+     "color": {
+      "red": 0.49803922,
+      "green": 0.8039216,
+      "blue": 0.2
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 45,
+     "aqiDisplay": "45",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 188.09,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 13.31,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 37,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 24.5,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 8.3,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.69,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T23:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 69,
+     "aqiDisplay": "69",
+     "color": {
+      "red": 0.5411765,
+      "green": 0.81960785,
+      "blue": 0.1882353
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 44,
+     "aqiDisplay": "44",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 179.81,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 2.25,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 39,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 11,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 5.22,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.69,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T22:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 67,
+     "aqiDisplay": "67",
+     "color": {
+      "red": 0.5882353,
+      "green": 0.8392157,
+      "blue": 0.16862746
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 44,
+     "aqiDisplay": "44",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 171.27,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 1.5,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 42,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 21,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 4.86,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.64,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T21:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 65,
+     "aqiDisplay": "65",
+     "color": {
+      "red": 0.63529414,
+      "green": 0.85882354,
+      "blue": 0.14901961
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 45,
+     "aqiDisplay": "45",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 163.36,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 5.57,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 44,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 33.2,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 14.9,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.84,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T20:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 64,
+     "aqiDisplay": "64",
+     "color": {
+      "red": 0.65882355,
+      "green": 0.8666667,
+      "blue": 0.13725491
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 42,
+     "aqiDisplay": "42",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 161.68,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 6.15,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 46,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 30.2,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 14.65,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 1,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T19:00:00Z"
+  },
+  {
+   "dateTime": "2026-08-13T18:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 64,
+     "aqiDisplay": "64",
+     "color": {
+      "red": 0.65882355,
+      "green": 0.8666667,
+      "blue": 0.13725491
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 39,
+     "aqiDisplay": "39",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 158.37,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 7.31,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 45,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 32.61,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 13.1,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 1.25,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T17:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 75,
+     "aqiDisplay": "75",
+     "color": {
+      "red": 0.43137255,
+      "green": 0.7764706,
+      "blue": 0.20392157
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 37,
+     "aqiDisplay": "37",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 158.8,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 6.71,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 23,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 27.6,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 12.51,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 1.1,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T16:00:00Z"
+  },
+  {
+   "dateTime": "2026-08-13T15:00:00Z"
+  },
+  {
+   "dateTime": "2026-08-13T14:00:00Z"
+  },
+  {
+   "dateTime": "2026-08-13T13:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 81,
+     "aqiDisplay": "81",
+     "color": {
+      "red": 0.3254902,
+      "green": 0.7411765,
+      "blue": 0.20784314
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 33,
+     "aqiDisplay": "33",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 155.92,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 4.5,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 6.01,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 21,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 6.4,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T12:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 83,
+     "aqiDisplay": "83",
+     "color": {
+      "red": 0.2901961,
+      "green": 0.7254902,
+      "blue": 0.21176471
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 33,
+     "aqiDisplay": "33",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 144.98,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 4.03,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 8,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 19,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 6.2,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T11:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 82,
+     "aqiDisplay": "82",
+     "color": {
+      "red": 0.30980393,
+      "green": 0.73333335,
+      "blue": 0.20784314
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 33,
+     "aqiDisplay": "33",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 143.79,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 2.66,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 12,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 20,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 6.5,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T10:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 85,
+     "aqiDisplay": "85",
+     "color": {
+      "red": 0.25882354,
+      "green": 0.7137255,
+      "blue": 0.21176471
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 33,
+     "aqiDisplay": "33",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 175.01,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 3.11,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 15,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 17,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 6.1,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T09:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 85,
+     "aqiDisplay": "85",
+     "color": {
+      "red": 0.25882354,
+      "green": 0.7137255,
+      "blue": 0.21176471
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 33,
+     "aqiDisplay": "33",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 175.9,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 3.4,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 15,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 17,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 5.7,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.64,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T08:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 76,
+     "aqiDisplay": "76",
+     "color": {
+      "red": 0.4117647,
+      "green": 0.77254903,
+      "blue": 0.20392157
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 33,
+     "aqiDisplay": "33",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 178.61,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 8.65,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 17,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 26.59,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 8.4,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.64,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T07:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 79,
+     "aqiDisplay": "79",
+     "color": {
+      "red": 0.36078432,
+      "green": 0.7529412,
+      "blue": 0.20784314
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 32,
+     "aqiDisplay": "32",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 181.28,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 9.99,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 20,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 23.59,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 8.2,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T06:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 83,
+     "aqiDisplay": "83",
+     "color": {
+      "red": 0.2901961,
+      "green": 0.7254902,
+      "blue": 0.21176471
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 31,
+     "aqiDisplay": "31",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "pm25"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 183.4,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 9.73,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 22,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 16.6,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 7.2,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.59,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T05:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 81,
+     "aqiDisplay": "81",
+     "color": {
+      "red": 0.3254902,
+      "green": 0.7411765,
+      "blue": 0.20784314
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "o3"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 32,
+     "aqiDisplay": "32",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 182.17,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 12.4,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 24,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 18.7,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 6.5,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.64,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  },
+  {
+   "dateTime": "2026-08-13T04:00:00Z",
+   "indexes": [
+    {
+     "code": "uaqi",
+     "displayName": "Universal AQI",
+     "aqi": 80,
+     "aqiDisplay": "80",
+     "color": {
+      "red": 0.34509805,
+      "green": 0.74509805,
+      "blue": 0.20784314
+     },
+     "category": "Excellent air quality",
+     "dominantPollutant": "pm10"
+    },
+    {
+     "code": "usa_epa",
+     "displayName": "AQI (US)",
+     "aqi": 35,
+     "aqiDisplay": "35",
+     "color": {
+      "green": 0.89411765
+     },
+     "category": "Good air quality",
+     "dominantPollutant": "o3"
+    }
+   ],
+   "pollutants": [
+    {
+     "code": "co",
+     "displayName": "CO",
+     "fullName": "Carbon monoxide",
+     "concentration": {
+      "value": 180.93,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Typically originates from incomplete combustion of carbon fuels, such as that which occurs in car engines and power plants.",
+      "effects": "When inhaled, carbon monoxide can prevent the blood from carrying oxygen. Exposure may cause dizziness, nausea and headaches. Exposure to extreme concentrations can lead to loss of consciousness."
+     }
+    },
+    {
+     "code": "no2",
+     "displayName": "NO2",
+     "fullName": "Nitrogen dioxide",
+     "concentration": {
+      "value": 13.14,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are fuel burning processes, such as those used in industry and transportation.",
+      "effects": "Exposure may cause increased bronchial reactivity in patients with asthma, lung function decline in patients with Chronic Obstructive Pulmonary Disease (COPD), and increased risk of respiratory infections, especially in young children."
+     }
+    },
+    {
+     "code": "o3",
+     "displayName": "O3",
+     "fullName": "Ozone",
+     "concentration": {
+      "value": 25,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Ozone is created in a chemical reaction between atmospheric oxygen, nitrogen oxides, carbon monoxide and organic compounds, in the presence of sunlight.",
+      "effects": "Ozone can irritate the airways and cause coughing, a burning sensation, wheezing and shortness of breath. Additionally, ozone is one of the major components of photochemical smog."
+     }
+    },
+    {
+     "code": "pm10",
+     "displayName": "PM10",
+     "fullName": "Inhalable particulate matter (<10\u00b5m)",
+     "concentration": {
+      "value": 23,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. indoor heating, wildfires), mechanical processes (e.g. construction, mineral dust, agriculture) and biological particles (e.g. pollen, bacteria, mold).",
+      "effects": "Inhalable particles can penetrate into the lungs. Short term exposure can cause irritation of the airways, coughing, and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "pm25",
+     "displayName": "PM2.5",
+     "fullName": "Fine particulate matter (<2.5\u00b5m)",
+     "concentration": {
+      "value": 6.9,
+      "units": "MICROGRAMS_PER_CUBIC_METER"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are combustion processes (e.g. power plants, indoor heating, car exhausts, wildfires), mechanical processes (e.g. construction, mineral dust) and biological particles (e.g. bacteria, viruses).",
+      "effects": "Fine particles can penetrate into the lungs and bloodstream. Short term exposure can cause irritation of the airways, coughing and aggravation of heart and lung diseases, expressed as difficulty breathing, heart attacks and even premature death."
+     }
+    },
+    {
+     "code": "so2",
+     "displayName": "SO2",
+     "fullName": "Sulfur dioxide",
+     "concentration": {
+      "value": 0.64,
+      "units": "PARTS_PER_BILLION"
+     },
+     "additionalInfo": {
+      "sources": "Main sources are burning processes of sulfur-containing fuel in industry, transportation and power plants.",
+      "effects": "Exposure causes irritation of the respiratory tract, coughing and generates local inflammatory reactions. These in turn, may cause aggravation of lung diseases, even with short term exposure."
+     }
+    }
+   ],
+   "healthRecommendations": {
+    "generalPopulation": "With this level of air quality, you have no limitations. Enjoy the outdoors!",
+    "elderly": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "lungDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, industrial emission stacks, open fires and other sources of smoke.",
+    "heartDiseasePopulation": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "athletes": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, industrial emission stacks, open fires and other sources of smoke.",
+    "pregnantWomen": "To keep you and your baby healthy, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke.",
+    "children": "If you start to feel respiratory discomfort such as coughing or breathing difficulties, consider reducing the intensity of your outdoor activities. Try to limit the time you spend near busy roads, construction sites, open fires and other sources of smoke."
+   }
+  }
+ ]
+}

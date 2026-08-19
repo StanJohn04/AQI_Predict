@@ -9,6 +9,10 @@ __pycache__/
 data/
 *.csv
 *.json
+# ...but the test fixtures are checked-in API responses, not data output.
+# Without this negation `git add tests/` silently skips them and the test
+# suite fails on a fresh clone with no error at add time.
+!tests/fixtures/*.json
 
 # Environment variables
 .env
