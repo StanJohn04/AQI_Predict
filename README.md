@@ -1,91 +1,160 @@
 # Automated Environmental Air Quality Data Pipeline
 
-This project is a complete, automated data engineering pipeline designed to collect, store, and process daily environmental data for selected locations in Georgia, USA. The system automatically fetches data from weather and air quality APIs, processes it, and stores it in a PostgreSQL database, creating a rich dataset for analysis and machine learning.
+An automated data engineering pipeline that collects, stores, and processes daily air quality
+and weather data for three locations around Savannah, Georgia. A scheduled Python job fetches
+from the Google Air Quality and Open-Meteo APIs, transforms the responses, and loads them into a
+local PostgreSQL database — building a time series intended for analysis and AQI forecasting.
 
 ## Key Features
 
-* **Automated Daily ETL:** The pipeline runs automatically every day via Windows Task Scheduler, ensuring a consistent and growing dataset without manual intervention.
-* **Multi-Source API Integration:** Extracts and combines data from two different external sources: the Google Air Quality API and the Open-Meteo API.
-* **Robust Data Transformation:** Python scripts handle data cleaning, transformation, and aggregation of hourly data points into daily summaries.
-* **Idempotent Database Loading:** The data loading process is designed to be idempotent using `ON CONFLICT DO UPDATE`, preventing duplicate records and ensuring data integrity if the script is run more than once on the same day.
-* **Historical Data Backfill:** Includes a dedicated script to perform a one-time backfill of the last 30 days of historical data, providing an immediate dataset for analysis.
+* **Automated daily ETL** — runs unattended via Windows Task Scheduler.
+* **Multi-source API integration** — combines the Google Air Quality API (AQI + six pollutants)
+  with the Open-Meteo API (temperature, precipitation, wind).
+* **Idempotent loading** — `ON CONFLICT (location_id, reading_date) DO UPDATE` means a date can
+  be re-run or re-fetched without creating duplicates.
+* **Historical backfill and patching** — dedicated scripts fill the initial ~30 days and repair
+  individual missing dates, averaging hourly readings into daily summaries.
 
 ## Tech Stack
 
-* **Language:** Python
-* **Libraries:** Pandas, SQLAlchemy, Requests, python-dotenv
-* **Database:** PostgreSQL
-* **Automation:** Windows Task Scheduler, Batch Scripting
-* **Version Control:** Git & GitHub
+| | |
+|---|---|
+| Language | Python 3.12 (Anaconda) |
+| Libraries | Pandas, SQLAlchemy, Requests, python-dotenv |
+| Database | PostgreSQL |
+| Automation | Windows Task Scheduler + batch script |
+| Analysis | Jupyter, Matplotlib, Seaborn |
 
 ## System Architecture
 
-The system operates on a single-machine architecture, where all processes run locally. The Python script, triggered by Task Scheduler, fetches data from the internet, transforms it, and loads it directly into the local PostgreSQL database.
+Everything runs on one machine: the same Windows PC hosts the PostgreSQL server and executes the
+ETL job.
 
 ```text
-[ Internet APIs ]
-      |
-      | 1. Fetch Raw Data (JSON)
-      V
-[ Windows PC ]
- |            |
- |            | 2. Python ETL Script (Transforms Data)
- |            |
- V            V
-[ PostgreSQL Database ] <---(3. Loads Data)
+[ Google Air Quality API ]      [ Open-Meteo API ]
+            |                           |
+            +------------+--------------+
+                         |  1. Fetch raw JSON
+                         v
+              [ Python ETL script ]
+                         |  2. Transform to one row per location per day
+                         v
+            [ PostgreSQL: aqi_db ]
 ```
+
+### Repository layout
+
+```text
+scripts/
+  etl.py                  Daily job — current conditions for each location
+  historical_backfill.py  One-time backfill of the last N days (Google caps history at ~30)
+  historical_patch.py     Re-fetch specific dates listed in the script
+  database_setup.sql      Schema reset — DROPS both tables, then recreates them
+  run_etl.bat             Task Scheduler entry point (activates conda, runs etl.py)
+notebooks/
+  01_data_exploration.ipynb
+Docs/
+  Docs.pdf                Full project documentation
+```
+
+## Database Schema
+
+**`locations`** — one row per collection site, unique on `(city, country)`.
+
+**`daily_readings`** — the time series, unique on `(location_id, reading_date)`:
+
+| Column | Description |
+|---|---|
+| `aqi` | Universal AQI (Google `uaqi` index) |
+| `pm10`, `pm25`, `o3`, `no2`, `co`, `so2` | Pollutant concentrations |
+| `temperature_celsius` | Daily mean |
+| `precipitation_mm` | Daily sum |
+| `wind_speed_kmh` | Daily maximum |
+
+> **Note on data semantics.** The daily job stores a *point-in-time* AQI reading and the day's
+> *forecast* weather; the historical scripts store a *24-hour mean* AQI and *observed* archive
+> weather. Rows written by the two paths are not directly comparable even though they share the
+> same columns. Account for this before training a model on the table.
+
 ## Getting Started
 
-Follow these steps to set up and run the project locally.
-
-**1. Clone the Repository**
-
-First, clone the project repository from GitHub to your local machine.
+### 1. Clone
 
 ```bash
-git clone [https://github.com/StanJohn04/AQI_Predict.git](https://github.com/StanJohn04/AQI_Predict.git)
-cd AQI_Predict
+git clone https://github.com/StanJohn04/AQI_Predict.git
 ```
 
-
-
-**2. Set Up the Python Environment**
-
-This project requires Anaconda (or Miniconda) with Python 3.12.
+### 2. Create the environment
 
 ```bash
-# Create and activate the Conda environment
 conda create --name AQI_Predict python=3.12
+```
+
+```bash
 conda activate AQI_Predict
 ```
+
+`requirements.txt` is a full `pip freeze` of the original conda environment and contains local
+build paths, so it will not install on another machine. Install the direct dependencies instead:
+
 ```bash
-# Install all required packages from the requirements file
-pip install -r requirements.txt
+pip install requests pandas sqlalchemy psycopg2-binary python-dotenv matplotlib seaborn jupyterlab
 ```
 
+### 3. Set up PostgreSQL
 
-**3. Configure the PostgreSQL Database**
-
-Ensure you have a running PostgreSQL instance. You will need to create a dedicated user and database for this project. Once created, run the following script from your terminal to set up the necessary tables and schema:
+Create a database and a user for the project, then build the schema. `database_setup.sql` drops
+`daily_readings` and `locations` first — only run it on an empty or disposable database.
 
 ```bash
 psql -U your_user -d your_db_name -f scripts/database_setup.sql
 ```
 
-**4. Create the Environment Variables File**
+### 4. Configure credentials
 
-Create a file named `.env` in the root project directory. Populate this file with your specific API key and database credentials as outlined in the main project documentation.
+Create a `.env` file in the project root (it is gitignored):
 
-**5. Run the ETL Scripts**
+```text
+GOOGLE_API_KEY=your_key
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=aqi_db
+DB_USER=your_user
+DB_PASSWORD=your_password
+```
 
-There are two main scripts to run:
+The Google API key needs the **Air Quality API** enabled on a billing-enabled Google Cloud
+project.
 
-* First, execute the one-time historical backfill to populate your database with the initial ~30 days of data:
-    ```bash
-    python scripts/historical_backfill.py
-    ```
-* The daily pipeline is designed to be run via the `run_etl.bat` script, which can then be automated with Windows Task Scheduler.
+### 5. Populate and schedule
 
-## Full Project Documentation
+Backfill history first, then let the daily job take over:
 
-For a complete breakdown of the project architecture, implementation details, challenges faced, and future enhancement plans, please see the full [**Project Documentation PDF**](Docs/Docs.pdf).
+```bash
+python scripts/historical_backfill.py
+```
+
+Point a Windows Task Scheduler task at `scripts\run_etl.bat` to run once a day. The batch file
+contains absolute paths to Anaconda and to this checkout — edit them for your machine.
+
+## Operations
+
+Run the daily job manually at any time; it is idempotent for the current date:
+
+```bash
+python scripts/etl.py
+```
+
+To fill a gap, add the dates to the `dates_to_process` list at the bottom of
+`historical_patch.py` and run it. Google's history endpoint only reaches back about 30 days, so
+gaps must be repaired promptly.
+
+**Known limitation:** the scripts report errors to stdout and always exit 0, and `run_etl.bat`
+does not capture output. A failed run therefore looks identical to a successful one in Task
+Scheduler history. To see what a scheduled run actually did, run it from a terminal and read the
+output, or redirect the batch file's output to a log file.
+
+## Full Documentation
+
+For architecture details, implementation notes, and planned enhancements, see the
+[Project Documentation PDF](Docs/Docs.pdf).
