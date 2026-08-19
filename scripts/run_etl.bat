@@ -1,13 +1,22 @@
 @echo OFF
-ECHO Starting daily AQI ETL process...
+SETLOCAL
+:: Scheduled entry point.
+::
+:: The previous version neither redirected output to a log nor propagated
+:: Python's exit code, so Task Scheduler recorded every run as successful --
+:: which is why a five-month outage went unnoticed. Both are fixed here.
 
-:: This command initializes Conda in the batch script's environment
-call C:\Users\stant\anaconda3\Scripts\activate.bat
+SET "REPO=C:\Users\stant\Documents\Projects\AQI_Predict"
+SET "LOGDIR=%REPO%\logs"
+IF NOT EXIST "%LOGDIR%" MKDIR "%LOGDIR%"
 
-:: This command activates your specific project environment
-call conda activate AQI_Predict
+FOR /F %%d IN ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd"') DO SET "TODAY=%%d"
+SET "LOGFILE=%LOGDIR%\run_etl-%TODAY%.log"
 
-:: This command runs your python script using its full path
-python C:\Users\stant\Documents\Projects\AQI_Predict\scripts\etl.py
+CALL C:\Users\stant\anaconda3\Scripts\activate.bat
+CALL conda activate AQI_Predict
 
-ECHO ETL process finished.
+python "%REPO%\scripts\fetch.py" >> "%LOGFILE%" 2>&1
+SET "RC=%ERRORLEVEL%"
+ECHO [%DATE% %TIME%] fetch.py exited with %RC% >> "%LOGFILE%"
+EXIT /B %RC%
