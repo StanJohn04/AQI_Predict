@@ -176,9 +176,9 @@ Backfill the recoverable history, then let the scheduled job take over:
 python scripts/fetch.py --days 30
 ```
 
-Point a Windows Task Scheduler task at `scripts\run_etl.bat` to run once a day. The batch file
-contains absolute paths to Anaconda and to this checkout — edit the `REPO` variable at the top
-for your machine.
+Point a Windows Task Scheduler task at `scripts\run_etl.bat` to run once a day. It derives
+the repo root from its own location, so no editing is needed. If Anaconda is not at
+`%USERPROFILE%\anaconda3`, set `CONDA_ROOT` in the environment to point at your install.
 
 ## Operations
 

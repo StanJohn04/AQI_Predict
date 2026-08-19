@@ -17,7 +17,8 @@ requests, python-dotenv, pytest.
 
 ## Global Constraints
 
-- All Python runs from the `AQI_Predict` conda env: `C:\Users\stant\anaconda3\envs\AQI_Predict\python.exe`.
+- All Python runs from the `AQI_Predict` conda env (`conda activate AQI_Predict`);
+  the commands below assume it is active. Do not hardcode an interpreter path.
 - Credentials come only from `.env` (gitignored). Never hardcode or log a password or API key.
 - Google `history:lookup` reaches back **exactly 30 days** and rejects any window ending less
   than **~2 hours** in the past. Both limits are load-bearing; encode them, don't rediscover them.
@@ -289,7 +290,7 @@ def request_json(method: str, url: str, **kwargs) -> dict:
 - [ ] **Step 2: Verify it imports and connects**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe -c "import sys; sys.path.insert(0,'scripts'); import common; print(len(common.LOCATIONS)); print(common.get_engine())"
+python -c "import sys; sys.path.insert(0,'scripts'); import common; print(len(common.LOCATIONS)); print(common.get_engine())"
 ```
 
 Expected: `3` then an `Engine(postgresql+psycopg2://...)` line, no traceback.
@@ -325,7 +326,7 @@ git commit -m "feat: add shared config, logging, HTTP and engine helpers"
 mkdir -p tests/fixtures
 cp "Data/raw/google_aqi/Savannah/2026-08-01.json" tests/fixtures/google_day.json
 cp "Data/raw/google_aqi/Savannah/2026-08-13.json" tests/fixtures/google_day_with_gaps.json
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe -c "
+python -c "
 import json
 d=json.load(open('Data/raw/open_meteo/Savannah.archive.json',encoding='utf-8'))
 h=d['hourly']; keep=slice(0,48)
@@ -407,7 +408,7 @@ def test_merge_hours_tolerates_missing_weather():
 - [ ] **Step 3: Run tests to verify they fail**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe -m pytest tests/test_transform.py -v
+python -m pytest tests/test_transform.py -v
 ```
 
 Expected: FAIL — `ModuleNotFoundError: No module named 'transform'`.
@@ -506,7 +507,7 @@ def merge_hours(aqi_rows: list[dict], weather: dict, weather_source: str) -> lis
 - [ ] **Step 5: Run tests to verify they pass**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe -m pytest tests/test_transform.py -v
+python -m pytest tests/test_transform.py -v
 ```
 
 Expected: 6 passed.
@@ -809,7 +810,7 @@ if __name__ == "__main__":
 - [ ] **Step 2: Verify argument handling without touching the network**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe -c "
+python -c "
 import sys; sys.path.insert(0,'scripts')
 import fetch
 print(fetch.resolve_days(fetch.parse_args(['--date','2026-08-18'])))
@@ -824,7 +825,7 @@ limit followed by `[]`.
 - [ ] **Step 3: Run it for real against one recent day**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe scripts/fetch.py --date 2026-08-18
+python scripts/fetch.py --date 2026-08-18
 ```
 
 Expected: three `INFO` lines (one per city) showing ~24 hours each, `Finished cleanly.`, exit 0.
@@ -832,7 +833,7 @@ Expected: three `INFO` lines (one per city) showing ~24 hours each, `Finished cl
 - [ ] **Step 4: Confirm the exit code is real**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe scripts/fetch.py --date 2020-01-01; echo "exit=$?"
+python scripts/fetch.py --date 2020-01-01; echo "exit=$?"
 ```
 
 Expected: `exit=1`.
@@ -913,7 +914,7 @@ if __name__ == "__main__":
 - [ ] **Step 2: Run it**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe scripts/load_raw.py
+python scripts/load_raw.py
 ```
 
 Expected: 90 lines, then `Loaded 2211 hourly rows.`
@@ -951,14 +952,23 @@ SETLOCAL
 :: to a dated log AND propagates Python's exit code, so Task Scheduler's
 :: "last run result" finally distinguishes a real run from a total failure.
 
-SET "REPO=C:\Users\stant\Documents\Projects\AQI_Predict"
+:: Paths are DERIVED, never hardcoded: %~dp0 is this file's own directory,
+:: so the repo root is its parent. Nothing names a user or a machine.
+FOR %%I IN ("%~dp0..") DO SET "REPO=%%~fI"
 SET "LOGDIR=%REPO%\logs"
 IF NOT EXIST "%LOGDIR%" MKDIR "%LOGDIR%"
 
 FOR /F %%d IN ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd"') DO SET "TODAY=%%d"
 SET "LOGFILE=%LOGDIR%\run_etl-%TODAY%.log"
 
-CALL C:\Users\stant\anaconda3\Scripts\activate.bat
+:: Set CONDA_ROOT in the environment to point at a non-default install.
+IF NOT DEFINED CONDA_ROOT SET "CONDA_ROOT=%USERPROFILE%\anaconda3"
+IF NOT EXIST "%CONDA_ROOT%\Scripts\activate.bat" (
+    ECHO [%DATE% %TIME%] ERROR: conda activate.bat not found under "%CONDA_ROOT%" >> "%LOGFILE%"
+    EXIT /B 1
+)
+
+CALL "%CONDA_ROOT%\Scripts\activate.bat"
 CALL conda activate AQI_Predict
 
 python "%REPO%\scripts\fetch.py" >> "%LOGFILE%" 2>&1
@@ -1081,7 +1091,7 @@ means; `hourly_readings` starts 2026-07-21; 2026-03-17..2026-07-20 is permanentl
 - [ ] **Step 2: Verify the documented commands actually work**
 
 ```bash
-C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe -m pytest tests/ -v && C:/Users/stant/anaconda3/envs/AQI_Predict/python.exe scripts/fetch.py --days 2
+python -m pytest tests/ -v && python scripts/fetch.py --days 2
 ```
 
 Expected: tests pass, fetch exits 0.
