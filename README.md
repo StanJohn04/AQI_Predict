@@ -1,27 +1,34 @@
 # Automated Environmental Air Quality Data Pipeline
 
-An automated data engineering pipeline that collects, stores, and processes daily air quality
-and weather data for three locations around Savannah, Georgia. A scheduled Python job fetches
-from the Google Air Quality and Open-Meteo APIs, transforms the responses, and loads them into a
-local PostgreSQL database — building a time series intended for analysis and AQI forecasting.
+An automated data engineering pipeline that collects, stores, and processes **hourly** air
+quality and weather data for three locations around Savannah, Georgia. A scheduled Python job
+fetches from the Google Air Quality and Open-Meteo APIs, transforms the responses, and loads them
+into a local PostgreSQL database — building a time series intended for analysis and AQI
+forecasting.
 
 ## Key Features
 
-* **Automated daily ETL** — runs unattended via Windows Task Scheduler.
-* **Multi-source API integration** — combines the Google Air Quality API (AQI + six pollutants)
-  with the Open-Meteo API (temperature, precipitation, wind).
-* **Idempotent loading** — `ON CONFLICT (location_id, reading_date) DO UPDATE` means a date can
-  be re-run or re-fetched without creating duplicates.
-* **Historical backfill and patching** — dedicated scripts fill the initial ~30 days and repair
-  individual missing dates, averaging hourly readings into daily summaries.
+* **Hourly resolution.** Observations are stored per hour in UTC; daily figures are derived by a
+  SQL view rather than stored, so the within-day signal that AQI forecasting depends on is never
+  averaged away at ingest.
+* **Automated ETL** — runs unattended via Windows Task Scheduler, re-fetching a trailing 3-day
+  window so a missed run heals itself.
+* **Multi-source API integration** — the Google Air Quality API (two AQI indexes + six
+  pollutants) combined with Open-Meteo (temperature, precipitation, wind, humidity, pressure).
+* **Idempotent loading** — `ON CONFLICT (location_id, observed_at) DO UPDATE` with `COALESCE`,
+  so any date can be re-run without creating duplicates or blanking data already held.
+* **Loud failures** — every failure path logs to `logs/` and returns a non-zero exit code that
+  the batch wrapper propagates to Task Scheduler.
+* **Tested transforms** — the JSON parsing is pure and covered by pytest against real captured
+  API responses.
 
 ## Tech Stack
 
 | | |
 |---|---|
 | Language | Python 3.12 (Anaconda) |
-| Libraries | Pandas, SQLAlchemy, Requests, python-dotenv |
-| Database | PostgreSQL |
+| Libraries | Pandas, SQLAlchemy, Requests, python-dotenv, pytest |
+| Database | PostgreSQL 17 |
 | Automation | Windows Task Scheduler + batch script |
 | Analysis | Jupyter, Matplotlib, Seaborn |
 
@@ -36,45 +43,70 @@ ETL job.
             +------------+--------------+
                          |  1. Fetch raw JSON
                          v
-              [ Python ETL script ]
-                         |  2. Transform to one row per location per day
+              [ Python ETL pipeline ]
+                         |  2. Transform to one row per location per HOUR (UTC)
                          v
-            [ PostgreSQL: aqi_db ]
+            [ PostgreSQL: hourly_readings ]
+                         |  3. Aggregate by true local date
+                         v
+            [ view: daily_readings_daily ]
 ```
 
 ### Repository layout
 
 ```text
 scripts/
-  etl.py                  Daily job — current conditions for each location
-  historical_backfill.py  One-time backfill of the last N days (Google caps history at ~30)
-  historical_patch.py     Re-fetch specific dates listed in the script
-  database_setup.sql      Schema reset — DROPS both tables, then recreates them
-  run_etl.bat             Task Scheduler entry point (activates conda, runs etl.py)
+  common.py           Config, LOCATIONS, logging, HTTP (timeout/retry/error body), DB engine
+  transform.py        Pure JSON -> row dicts. No I/O. The tested module.
+  sources.py          Network calls to Google Air Quality and Open-Meteo
+  load.py             The single upsert statement and location lookup
+  fetch.py            CLI entry point; owns exit codes
+  load_raw.py         Loads the rescued captures in Data/raw into the database
+  schema_hourly.sql   Additive migration — safe to re-run
+  reset_database.sql  DESTRUCTIVE from-scratch reset — drops both tables
+  create_etl_role.sql One-time creation of the least-privilege aqi_etl role
+  run_etl.bat         Task Scheduler entry point
+tests/
+  test_transform.py   Transform tests
+  fixtures/           Real API responses used as fixtures
 notebooks/
   01_data_exploration.ipynb
 Docs/
-  Docs.pdf                Full project documentation
+  Docs.pdf            Full project documentation
 ```
 
 ## Database Schema
 
-**`locations`** — one row per collection site, unique on `(city, country)`.
+**`locations`** — one row per collection site, unique on `(city, country)`, with a `timezone`
+column used to derive local days.
 
-**`daily_readings`** — the time series, unique on `(location_id, reading_date)`:
+**`hourly_readings`** — the time series, unique on `(location_id, observed_at)`:
 
 | Column | Description |
 |---|---|
-| `aqi` | Universal AQI (Google `uaqi` index) |
+| `observed_at` | Hour of observation, **UTC** |
+| `uaqi` | Google universal AQI index |
+| `usa_epa` | US EPA AQI index — generally the more useful one here |
 | `pm10`, `pm25`, `o3`, `no2`, `co`, `so2` | Pollutant concentrations |
-| `temperature_celsius` | Daily mean |
-| `precipitation_mm` | Daily sum |
-| `wind_speed_kmh` | Daily maximum |
+| `temperature_celsius`, `precipitation_mm`, `wind_speed_kmh` | Weather |
+| `relative_humidity_pct`, `surface_pressure_hpa` | Weather |
+| `weather_source` | `archive` (reanalysis) or `forecast` (recent tail) |
 
-> **Note on data semantics.** The daily job stores a *point-in-time* AQI reading and the day's
-> *forecast* weather; the historical scripts store a *24-hour mean* AQI and *observed* archive
-> weather. Rows written by the two paths are not directly comparable even though they share the
-> same columns. Account for this before training a model on the table.
+**`daily_readings_daily`** (view) — daily aggregation by true local date, with `hours_present`
+and `hours_with_aqi` so coverage is visible rather than assumed. Temperature is a mean,
+precipitation a sum, wind a maximum.
+
+**`daily_readings`** (legacy table) — frozen, no longer written to. See below.
+
+> ### Data semantics — read before modelling
+>
+> The dataset has a **regime boundary at 2026-03-17**.
+>
+> | Period | State |
+> |---|---|
+> | 2025-06-08 .. 2026-03-16 | `daily_readings`. Internally inconsistent: rows from the old daily job are point-in-time AQI readings with *forecast* weather, while backfilled rows are 24-hour means with *observed* weather — in the same columns. It cannot be un-mixed, so the table is frozen rather than migrated. |
+> | 2026-03-17 .. 2026-07-20 | **Permanently absent.** A credential failure stopped collection and the outage went unnoticed because failures were silent. Google's history API reaches back only 30 days, so this window is unrecoverable. |
+> | 2026-07-21 onward | `hourly_readings`. Consistent hourly observations. |
 
 ## Getting Started
 
@@ -94,21 +126,27 @@ conda create --name AQI_Predict python=3.12
 conda activate AQI_Predict
 ```
 
-`requirements.txt` is a full `pip freeze` of the original conda environment and contains local
-build paths, so it will not install on another machine. Install the direct dependencies instead:
-
 ```bash
-pip install requests pandas sqlalchemy psycopg2-binary python-dotenv matplotlib seaborn jupyterlab
+pip install -r requirements.txt
 ```
 
 ### 3. Set up PostgreSQL
 
-Create a database and a user for the project, then build the schema. `database_setup.sql` drops
-`daily_readings` and `locations` first — only run it on an empty or disposable database.
+Create the database, then create the dedicated ETL role. The role script prompts for the
+password interactively, so it never lands in a file or your shell history:
 
 ```bash
-psql -U your_user -d your_db_name -f scripts/database_setup.sql
+psql -U postgres -f scripts/create_etl_role.sql
 ```
+
+Then build the schema. `schema_hourly.sql` is **additive and safe to re-run**:
+
+```bash
+psql -U postgres -d aqi_db -f scripts/schema_hourly.sql
+```
+
+> `scripts/reset_database.sql` drops both tables. It is a from-scratch reset, not a migration —
+> never run it against a populated database.
 
 ### 4. Configure credentials
 
@@ -119,42 +157,79 @@ GOOGLE_API_KEY=your_key
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=aqi_db
-DB_USER=your_user
+DB_USER=aqi_etl
 DB_PASSWORD=your_password
 ```
 
 The Google API key needs the **Air Quality API** enabled on a billing-enabled Google Cloud
 project.
 
+Use the dedicated `aqi_etl` role rather than a personal one. The pipeline previously shared a
+personal role with other projects, and an unrelated password change took it offline for five
+months.
+
 ### 5. Populate and schedule
 
-Backfill history first, then let the daily job take over:
+Backfill the recoverable history, then let the scheduled job take over:
 
 ```bash
-python scripts/historical_backfill.py
+python scripts/fetch.py --days 30
 ```
 
 Point a Windows Task Scheduler task at `scripts\run_etl.bat` to run once a day. The batch file
-contains absolute paths to Anaconda and to this checkout — edit them for your machine.
+contains absolute paths to Anaconda and to this checkout — edit the `REPO` variable at the top
+for your machine.
 
 ## Operations
 
-Run the daily job manually at any time; it is idempotent for the current date:
-
 ```bash
-python scripts/etl.py
+python scripts/fetch.py                              # trailing 3-day catch-up (the scheduled run)
 ```
 
-To fill a gap, add the dates to the `dates_to_process` list at the bottom of
-`historical_patch.py` and run it. Google's history endpoint only reaches back about 30 days, so
-gaps must be repaired promptly.
+```bash
+python scripts/fetch.py --date 2026-08-18            # one specific day
+```
 
-**Known limitation:** the scripts report errors to stdout and always exit 0, and `run_etl.bat`
-does not capture output. A failed run therefore looks identical to a successful one in Task
-Scheduler history. To see what a scheduled run actually did, run it from a terminal and read the
-output, or redirect the batch file's output to a log file.
+```bash
+python scripts/fetch.py --start 2026-08-01 --end 2026-08-10   # a range
+```
+
+```bash
+python scripts/fetch.py --days 30                    # the full recoverable window
+```
+
+Every run is idempotent, so re-running any date is harmless.
+
+### Diagnosing a failed run
+
+Failures are visible in three places, in increasing detail:
+
+1. **Task Scheduler** — "last run result" is now accurate; non-zero means something failed.
+2. **`logs/run_etl-<date>.log`** — everything the scheduled run printed.
+3. **`logs/aqi_etl-<date>.log`** — the pipeline's own log, including HTTP response bodies, which
+   is where Google reports the real cause of a 4xx (key expired, quota, billing, API disabled).
+
+### API limits worth knowing
+
+* Google's history endpoint reaches back **exactly 30 days**. Gaps must be repaired promptly;
+  past that they are permanent.
+* A history window may not end **less than ~2 hours in the past**, so today's data always
+  arrives truncated. The trailing catch-up window fills it in on subsequent runs.
+* Google intermittently returns HTTP 200 with every pollutant concentration null. `sources.py`
+  detects the low coverage and re-requests; without that, roughly 45% of pollutant values are
+  silently lost.
+
+## Tests
+
+```bash
+pytest tests/ -v
+```
+
+The tests cover `scripts/transform.py` using real captured API responses as fixtures — that
+module is deliberately pure, and it is where every subtle bug in this project's history has been.
 
 ## Full Documentation
 
 For architecture details, implementation notes, and planned enhancements, see the
-[Project Documentation PDF](Docs/Docs.pdf).
+[Project Documentation PDF](Docs/Docs.pdf). *(The PDF still describes the pre-2026-08-19 daily
+architecture and needs regenerating.)*

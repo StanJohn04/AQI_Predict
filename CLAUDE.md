@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A single-machine ETL pipeline that pulls daily air-quality and weather data for three cities
-near Savannah, GA into a local PostgreSQL database, so the resulting time series can later be
-used for AQI forecasting. There is no application, service, or API — just scripts run on a
-schedule plus a notebook for exploration.
+A single-machine ETL pipeline that pulls hourly air-quality and weather data for three cities
+near Savannah, GA into a local PostgreSQL database, so the resulting time series can be used for
+AQI forecasting. There is no application, service, or API — just scripts run on a schedule plus a
+notebook for exploration.
 
 ## Commands
 
@@ -19,104 +19,118 @@ conda activate AQI_Predict
 
 | Task | Command |
 |---|---|
-| Daily pull (today, all locations) | `python scripts/etl.py` |
-| Scheduled entry point (used by Task Scheduler) | `scripts\run_etl.bat` |
-| Backfill last N days | `python scripts/historical_backfill.py` |
-| Patch specific missing dates | `python scripts/historical_patch.py` |
-| Create/reset schema (**drops all data**) | `psql -U <user> -d <db> -f scripts/database_setup.sql` |
+| Daily pull (trailing 3-day catch-up) | `python scripts/fetch.py` |
+| Scheduled entry point (Task Scheduler) | `scripts\run_etl.bat` |
+| One specific day | `python scripts/fetch.py --date 2026-08-18` |
+| A date range | `python scripts/fetch.py --start 2026-08-01 --end 2026-08-10` |
+| Last N days | `python scripts/fetch.py --days 30` |
+| Load rescued raw captures | `python scripts/load_raw.py` |
+| Apply schema (**additive, safe**) | `psql -U postgres -d aqi_db -f scripts/schema_hourly.sql` |
+| Create the ETL role (one-time) | `psql -U postgres -f scripts/create_etl_role.sql` |
+| Tests | `pytest tests/ -v` |
 | Exploration notebook | `jupyter lab notebooks/01_data_exploration.ipynb` |
 
-No tests, linter, or CI exist in this repo.
-
-Both historical scripts take their date range from **hardcoded constants in `__main__`**, not
-CLI arguments — `DAYS_OF_HISTORY` in `historical_backfill.py`, the `dates_to_process` list in
-`historical_patch.py`. Changing what they fetch means editing the source.
+There is no linter or CI. `pytest` covers `scripts/transform.py` only — deliberately, because
+that is where every subtle bug in this project's history has lived.
 
 ## Configuration
 
 Credentials come from `.env` in the repo root (gitignored), loaded via `python-dotenv`:
 `GOOGLE_API_KEY`, `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`.
 
-`run_etl.bat` hardcodes absolute paths to Anaconda and to this checkout. It only works on the
-machine it was written for.
+The pipeline authenticates as a dedicated `aqi_etl` role with only SELECT/INSERT/UPDATE on the
+two tables. **Do not point it back at a personal superuser role.** It used to use the shared
+`stant` role, and on 2026-03-17 an unrelated project's `ALTER ROLE stant WITH PASSWORD ...`
+invalidated the credential and took the pipeline down for five months.
+
+`run_etl.bat` hardcodes absolute paths to Anaconda and to this checkout (now via a single `REPO`
+variable at the top). It only works on the machine it was written for.
 
 ## Architecture
 
-### The three scripts are forks of each other
+```
+scripts/
+  common.py      config, LOCATIONS, logging, HTTP (timeout+retry+error body), DB engine
+  transform.py   pure JSON -> row dicts. No I/O. This is the tested module.
+  sources.py     network calls to Google Air Quality and Open-Meteo
+  load.py        the single upsert statement and location lookup
+  fetch.py       CLI entry point; owns exit codes
+  load_raw.py    loads the rescued captures in Data/raw into the database
+```
 
-`etl.py`, `historical_backfill.py`, and `historical_patch.py` each carry their **own copy** of
-`LOCATIONS`, `get_db_engine()`, `load_data()`, and the full `INSERT ... ON CONFLICT` statement.
-Nothing is shared. A schema or location change must be applied in all three files or they will
-silently diverge. `historical_patch.py` is a near-verbatim fork of `historical_backfill.py`
-with a different weather-fetch strategy and hardcoded dates.
+Each module has one job and nothing is duplicated. A schema or location change is a one-file
+edit. (Before 2026-08-19 the three entry scripts each carried their own copy of `LOCATIONS`,
+`get_db_engine`, `load_data` and the full INSERT — a change had to be made in three places and
+nothing detected a missed one.)
 
-### The same columns hold two different quantities
+### Data model: hourly is the source of truth
 
-This is the most important thing to know before doing any analysis or modeling on this data:
+`hourly_readings` stores one row per `(location_id, observed_at)` with `observed_at` in **UTC**.
+Daily figures are derived by the `daily_readings_daily` view, which groups by true local date
+using `locations.timezone`. Nothing stores a daily aggregate.
 
-- **`etl.py`** calls Google's `currentConditions:lookup` and stores that **single instantaneous
-  reading** as the day's value, paired with Open-Meteo's `forecast` endpoint — i.e. the day's
-  *predicted* weather.
-- **`historical_*.py`** call `history:lookup`, load the 24 hourly records into a DataFrame, and
-  store the **daily mean**, paired with Open-Meteo's `archive` endpoint — i.e. *observed*
-  weather.
+The view mirrors the original daily semantics on purpose: mean temperature, **summed**
+precipitation, **max** wind.
 
-So backfilled rows and daily rows in `daily_readings` are not comparable, even though they sit
-in the same columns. Reprocessing a date with the historical script overwrites the snapshot with
-a mean (the `ON CONFLICT DO UPDATE` makes the load idempotent per `(location_id, reading_date)`).
+Both AQI indexes are kept: `uaqi` (Google's universal index) and `usa_epa`. The latter is
+generally the more useful one for a US location and was previously discarded.
+
+### `daily_readings` is legacy — do not write to it
+
+It holds 2025-06-08 .. 2026-03-16 and is **not internally consistent**: rows written by the old
+daily job are instantaneous snapshots paired with *forecast* weather, while backfilled rows are
+24-hour means paired with *observed* weather, in the same columns. This cannot be un-mixed, so
+the table is frozen rather than migrated.
+
+**Any model must treat 2026-03-17 as a regime boundary.** Timeline:
+
+| Period | State |
+|---|---|
+| 2025-06-08 .. 2026-03-16 | `daily_readings`, mixed snapshot/mean semantics |
+| 2026-03-17 .. 2026-07-20 | **permanently absent** — outage, past Google's 30-day horizon |
+| 2026-07-21 onward | `hourly_readings`, consistent hourly observations |
 
 ### External API shapes
 
-- **Google Air Quality.** `currentConditions:lookup` returns `indexes` and `pollutants` at the
-  top level; `history:lookup` nests them per hour under **`hoursInfo`** (not `hours` — that was
-  a real bug, see the comment in `historical_backfill.py`). AQI is read from the entry whose
-  `code == 'uaqi'`; the `LOCAL_AQI` extra computation also returns a `usa_epa` index that is
-  currently ignored. History lookback is capped at ~30 days.
-- **Open-Meteo.** The `archive` endpoint lags several days behind real time. `historical_patch.py`
-  branches on `days_ago < 3` to use `forecast` with `past_days` for recent dates, and reads
-  `[-1]` from the daily arrays because `past_days` returns a range, not a single day. The
-  backfill script reads `[0]` because its archive query returns exactly one day. Getting this
-  index wrong silently attributes the wrong day's weather to a row.
+- **Google Air Quality.** `history:lookup` nests hourly records under **`hoursInfo`** (not
+  `hours` — that was a real bug once). Records come back **newest-first**, so nothing may depend
+  on position; `transform.py` keys everything by absolute timestamp instead. AQI is read from
+  the entries whose `code` is `uaqi` and `usa_epa`.
+  - **History reaches back exactly 30 days.** Day 30 returns HTTP 400. Anything older is gone.
+  - **A window may not end less than ~2 hours in the past** — otherwise HTTP 400. This is why
+    today's data always arrives truncated.
+  - **It intermittently returns 200 with every `concentration` null.** Not an error status; an
+    identical re-request returns the data. `sources.fetch_google_day` retries on low
+    concentration coverage for exactly this reason. Without that retry roughly 45% of pollutant
+    values are silently lost.
+  - `concentration` arrives as JSON `null`, not as a missing key.
+  - The exclusive end-of-window hour comes back with pollutant codes but null values; the
+    upsert's `COALESCE` stops it blanking good data from the adjacent day.
+- **Open-Meteo.** Queried with `timezone: auto`, so `hourly.time` is naive **local** time;
+  `utc_offset_seconds` converts it exactly. The `archive` endpoint lags several days behind real
+  time, so `sources.fetch_weather` uses `forecast` with `past_days` for anything recent and
+  tags the row with `weather_source` accordingly.
 
-### Day boundaries are inconsistent
+### Failure model — everything is loud
 
-`reading_date` is the host machine's local date. The historical scripts build the Google query
-window as `datetime.combine(date, time.min).isoformat() + "Z"` — local midnight labelled as UTC,
-so the 24-hour window is actually offset by the local UTC offset. Open-Meteo is queried with
-`timezone: auto`, which aggregates by true local day. The AQI mean and the weather values on a
-given row therefore cover different spans.
-
-### Failure model — everything is silent
-
-No script raises or exits nonzero. Every failure path (`get_db_engine`, both fetch functions,
-`transform_data`) prints a message and returns `None`; `__main__` skips the row and keeps going,
-then exits 0. `requests` calls have no timeout and no retry. `run_etl.bat` does not redirect
-output to a log and does not propagate Python's exit code, so **Windows Task Scheduler records
-every run as successful regardless of what happened.** When diagnosing a missed pull, the
-scheduler history and the database are both useless as evidence — run the script by hand and
-read stdout, or add logging first.
-
-Note also that `raise_for_status()` errors are printed without the response body, which is where
+Every failure path logs and propagates. `fetch.py` returns non-zero if *any* location-day fails;
+`run_etl.bat` redirects stdout and stderr to `logs/run_etl-<date>.log` and exits with Python's
+code, so **Task Scheduler's "last run result" is now trustworthy.** All `requests` calls have a
+30-second timeout and bounded retries, and HTTP errors log the response body — which is where
 Google puts the actual reason for a 4xx (key expired, quota, billing, API not enabled).
 
-## Schema
-
-Two tables — `locations` (city/country unique) and `daily_readings` (one row per
-`location_id` + `reading_date`, with `aqi`, six pollutants, and three weather columns).
-
-`scripts/database_setup.sql` begins with `DROP TABLE IF EXISTS` on both tables. It is a reset
-script, not a migration — never run it against the populated database. Its column list also
-disagrees with `Docs/Docs.md` (`aqi INTEGER` vs `aqi REAL`); verify against the live database
-before trusting either, since the historical scripts write a float mean into `aqi`.
+The daily run re-fetches a trailing 3-day window, so a missed run self-heals on the next one.
+The upsert is idempotent per `(location_id, observed_at)`, making any re-run harmless.
 
 ## Repo conventions
 
-- `Docs/Docs.md` is **gitignored** (`docs.md` pattern); only `Docs/Docs.pdf` is tracked. Edits
-  to the markdown will not show up in `git status`.
-- `.gitignore` contains `data/`, which on case-insensitive Windows also excludes the `Data/`
-  directory.
-- `requirements.txt` is a raw `pip freeze` from a conda environment — 86 of its 110 entries are
-  `@ file:///C:/...` local build paths and will not install anywhere else. The real direct
-  dependencies are `requests`, `pandas`, `sqlalchemy`, `psycopg2`, `python-dotenv`, plus
-  `matplotlib`/`seaborn`/`jupyter` for the notebook.
-- Commit messages follow Conventional Commits (`feat:`, `fix:`, `chore:`).
+- `Docs/Docs.md` is **gitignored** (`docs.md` pattern); only `Docs/Docs.pdf` is tracked. Edits to
+  the markdown will not show up in `git status`. **It still describes the pre-2026-08-19
+  architecture and needs regenerating.**
+- `.gitignore` contains `data/`, which on case-insensitive Windows also excludes `Data/` — this
+  is deliberate: `Data/raw/` holds ~12 MB of captured API responses.
+- `Data/raw/` is the rescued 2026-07-21..2026-08-19 window, kept verbatim. It is the only copy
+  of that data outside the database and doubles as the source for `tests/fixtures/`.
+- `scripts/reset_database.sql` (formerly `database_setup.sql`) **drops both tables**. It is a
+  from-scratch reset, not a migration. Use `schema_hourly.sql`, which is additive and re-runnable.
+- Commit messages follow Conventional Commits (`feat:`, `fix:`, `chore:`, `test:`, `docs:`).
