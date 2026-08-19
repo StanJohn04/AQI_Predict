@@ -43,8 +43,10 @@ two tables. **Do not point it back at a personal superuser role.** It used to us
 `stant` role, and on 2026-03-17 an unrelated project's `ALTER ROLE stant WITH PASSWORD ...`
 invalidated the credential and took the pipeline down for five months.
 
-`run_etl.bat` hardcodes absolute paths to Anaconda and to this checkout (now via a single `REPO`
-variable at the top). It only works on the machine it was written for.
+`run_etl.bat` derives its paths: `%~dp0..` gives the repo root from the script's own location,
+and Anaconda is looked up at `%USERPROFILE%\anaconda3` unless `CONDA_ROOT` is set in
+the environment. It names no user and no machine, and exits 1 if conda is not found where
+expected.
 
 ## Architecture
 
