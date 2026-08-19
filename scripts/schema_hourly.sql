@@ -66,3 +66,16 @@ COMMENT ON TABLE hourly_readings IS
     'Hourly observations, UTC. Single source of truth; daily figures come from daily_readings_daily.';
 COMMENT ON VIEW daily_readings_daily IS
     'Daily aggregation of hourly_readings by true local date. hours_with_aqi gives coverage.';
+
+-- Grants live with the migration that creates the objects, so a new table can
+-- never be invisible to the ETL role. Guarded so this file still runs on a
+-- database where create_etl_role.sql has not been applied yet.
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'aqi_etl') THEN
+        GRANT SELECT, INSERT, UPDATE ON hourly_readings TO aqi_etl;
+        GRANT USAGE, SELECT ON SEQUENCE hourly_readings_id_seq TO aqi_etl;
+        GRANT SELECT ON daily_readings_daily TO aqi_etl;
+    END IF;
+END
+$$;

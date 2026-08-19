@@ -36,9 +36,14 @@ GRANT USAGE, SELECT ON SEQUENCE locations_id_seq, daily_readings_id_seq TO aqi_e
 
 -- Keep the grants working if the tables are ever recreated by database_setup.sql
 -- (which runs as the owning role, not as aqi_etl).
--- FOR ROLE stant because that is the role that owns the tables and would run
--- database_setup.sql; default privileges attach to the creating role, so
--- omitting this would silently only cover objects created by postgres.
+-- Default privileges attach to the CREATING role, so they must be declared for
+-- every role that might create objects here -- postgres (migrations) and stant
+-- (the personal role that owns the original tables). Getting this wrong is why
+-- hourly_readings was initially unreadable by aqi_etl.
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public
+    GRANT SELECT, INSERT, UPDATE ON TABLES TO aqi_etl;
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public
+    GRANT USAGE, SELECT ON SEQUENCES TO aqi_etl;
 ALTER DEFAULT PRIVILEGES FOR ROLE stant IN SCHEMA public
     GRANT SELECT, INSERT, UPDATE ON TABLES TO aqi_etl;
 ALTER DEFAULT PRIVILEGES FOR ROLE stant IN SCHEMA public
